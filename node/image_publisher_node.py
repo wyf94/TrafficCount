@@ -13,8 +13,8 @@ import test.test
 def imagePublisher():
     rospy.init_node('image_publisher', anonymous=True)
 
-    img_pub = rospy.Publisher('/image_source', Image, queue_size=1)
-    rate = rospy.Rate(10)
+    img_pub = rospy.Publisher('/image_source', Image, queue_size=10)
+    rate = rospy.Rate(25)
  
     cap = cv2.VideoCapture("/home/wyf/ros_ws/src/TrafficCount/video/1_1080.mp4")
 
@@ -25,14 +25,14 @@ def imagePublisher():
         return -1
  
     count = 0
-    scaling_factor =0.5
+    # scaling_factor =0.5
     print('Video open succeed!')
     while not rospy.is_shutdown():
-        if count >= 300:
+        if count >= 4500:
             cap = cv2.VideoCapture("/home/wyf/ros_ws/src/TrafficCount/video/1_1080.mp4")
             count = 0
         ret, frame = cap.read()
-        frame = cv2.resize(frame,None,fx=scaling_factor,fy=scaling_factor,interpolation=cv2.INTER_AREA)
+        # frame = cv2.resize(frame,None,fx=scaling_factor,fy=scaling_factor,interpolation=cv2.INTER_AREA)
         msg = bridge.cv2_to_imgmsg(frame, encoding="bgr8")
         img_pub.publish(msg)
         count = count + 1
