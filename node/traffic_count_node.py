@@ -8,9 +8,9 @@ from sensor_msgs.msg import Image
 import cv_bridge
 from cv_bridge import CvBridge, CvBridgeError
 
-# import test.test as test
-from detector.detector import Detector
-import tracker.tracker as tracker
+import traffic_count.test.test as test
+from traffic_count.detector.detector import Detector
+import traffic_count.tracker.tracker as tracker
 
 
 # import rospy

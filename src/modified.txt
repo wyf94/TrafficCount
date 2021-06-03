@@ -1,6 +1,0 @@
-/media/wyf/C49616A3961695D0/yunfeng.wu/TrafficCount/src/models/experimental.py
-
-import os 
-
-if not os.path.exists(weights):
-    attempt_download(w)

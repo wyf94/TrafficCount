@@ -34,11 +34,7 @@ include_directories(
 )
 
 catkin_install_python(PROGRAMS
-  node/image_publisher_node.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
-catkin_install_python(PROGRAMS
+  node/image_publisher_node.py  
   node/traffic_count_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

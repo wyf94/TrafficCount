@@ -8,7 +8,7 @@ from cv_bridge import CvBridge, CvBridgeError
 import cv2
 import sys
 
-import test.test
+sys.path.remove('/opt/ros/melodic/lib/python2.7/dist-packages')
  
 def imagePublisher():
     rospy.init_node('image_publisher', anonymous=True)

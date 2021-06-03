@@ -8,8 +8,8 @@ from catkin_pkg.python_setup import generate_distutils_setup
 setup_args = generate_distutils_setup(
     version='0.0.0',
     scripts=['node/image_publisher_node.py', 'node/traffic_count_node.py'],
-    packages=["traffic_count"], 
-    package_dir={"": "src"},
+    packages=['traffic_count'], 
+    package_dir={'': 'src'},
     requires=['std_msgs', 'rospy', 'sensor_msgs']
 )
 
